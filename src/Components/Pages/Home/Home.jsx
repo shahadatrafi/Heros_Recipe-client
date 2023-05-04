@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import banner  from '../../assets/banner.jpg'
+import banner  from '../../../assets/banner.jpg'
 
 const Home = () => {
     return (

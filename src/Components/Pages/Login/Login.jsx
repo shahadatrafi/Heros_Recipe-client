@@ -2,36 +2,36 @@ import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import app from '../Firebase/firebase.init';
+// import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+// import app from '../Firebase/firebase.init';
 
 
 const Login = () => {
 
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
+    // const auth = getAuth(app);
+    // const googleProvider = new GoogleAuthProvider();
+    // const githubProvider = new GithubAuthProvider();
 
-    const handleGoogleSignIn = () =>{
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const user = result.user
-            console.log(user)
-        })
-        .catch(error => {
-            console.log("error", error.message)
-        })
-    }
-    const handleGithubSignIn = () =>{
-        signInWithPopup(auth, githubProvider)
-        .then(result => {
-            const user = result.user
-            console.log(user)
-        })
-        .catch(error => {
-            console.log("error", error.message)
-        })
-    }
+    // const handleGoogleSignIn = () =>{
+    //     signInWithPopup(auth, googleProvider)
+    //     .then(result => {
+    //         const user = result.user
+    //         console.log(user)
+    //     })
+    //     .catch(error => {
+    //         console.log("error", error.message)
+    //     })
+    // }
+    // const handleGithubSignIn = () =>{
+    //     signInWithPopup(auth, githubProvider)
+    //     .then(result => {
+    //         const user = result.user
+    //         console.log(user)
+    //     })
+    //     .catch(error => {
+    //         console.log("error", error.message)
+    //     })
+    // }
  
     return (
         <Container className='w-25 mx-auto my-5'>
@@ -58,10 +58,10 @@ const Login = () => {
                 <Button className='w-100 mb-2' variant="danger" type="submit">
                     Login
                 </Button>
-                <Button onClick={handleGoogleSignIn} className='w-100 mb-2' variant="danger" >
+                <Button className='w-100 mb-2' variant="danger" >
                     <FaGoogle></FaGoogle> Login With Google
                 </Button>
-                <Button onClick={handleGithubSignIn} className='w-100 mb-2' variant="danger" >
+                <Button className='w-100 mb-2' variant="danger" >
                     <FaGithub></FaGithub> Login With Github
                 </Button>
                 <br />
