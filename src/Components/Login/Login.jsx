@@ -1,8 +1,27 @@
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from '../Firebase/firebase.init';
+
 
 const Login = () => {
+
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () =>{
+        signInWithPopup(auth, googleProvider)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+        })
+        .catch(error => {
+            console.log("error", error.message)
+        })
+    }
+ 
     return (
         <Container className='w-25 mx-auto my-5'>
             <h4>Please Login</h4>
@@ -25,12 +44,18 @@ const Login = () => {
                 <Form.Text className="text-danger">
 
                 </Form.Text>
-                <Button className='w-100 mb-2' variant="primary" type="submit">
+                <Button className='w-100 mb-2' variant="danger" type="submit">
                     Login
                 </Button>
-                <br/>
+                <Button onClick={handleGoogleSignIn} className='w-100 mb-2' variant="danger" >
+                    <FaGoogle></FaGoogle> Login With Google
+                </Button>
+                <Button className='w-100 mb-2' variant="danger" >
+                    <FaGithub></FaGithub> Login With Github
+                </Button>
+                <br />
                 <Form.Text>
-                    Don't have an account? Please <Link to ="/register">Register</Link>
+                    Don't have an account? Please <Link className='text-danger fw-bold' to="/register">Register</Link>
                 </Form.Text>
 
             </Form>

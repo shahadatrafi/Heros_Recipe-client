@@ -35,14 +35,15 @@ const Register = () => {
                 <Form.Text className="text-danger">
 
                 </Form.Text>
-                <Button className='w-100 mb-2' variant="primary" type="submit">
+                <Button className='w-100 mb-2' variant="danger" type="submit">
                     Register
                 </Button>
                 <br/>
                 <Form.Text>
-                    Already Have an account? Please <Link to ="/login">Login</Link>
+                    Already Have an account? Please <Link className='text-danger fw-bold' to ="/login">Login</Link>
                 </Form.Text>
             </Form>
+            
         </Container>
     );
 };
