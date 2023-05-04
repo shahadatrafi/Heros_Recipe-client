@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-// import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { AuthContext } from '../../Provider/AuthProvider';
 // import app from '../Firebase/firebase.init';
 
 
 const Login = () => {
+    const [success, setSuccess] = useState('');
+    const {GoogleSignIn} = useContext(AuthContext);
 
-    // const auth = getAuth(app);
-    // const googleProvider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+
     // const githubProvider = new GithubAuthProvider();
 
-    // const handleGoogleSignIn = () =>{
-    //     signInWithPopup(auth, googleProvider)
-    //     .then(result => {
-    //         const user = result.user
-    //         console.log(user)
-    //     })
-    //     .catch(error => {
-    //         console.log("error", error.message)
-    //     })
-    // }
+    const handleGoogleSignIn = () =>{
+        GoogleSignIn(googleProvider)
+        .then(result => {
+            const user = result.user
+            setSuccess("User Logged In Successfully ")
+            console.log(user)
+        })
+        .catch(error => {
+            console.log("error", error.message)
+        })
+    }
     // const handleGithubSignIn = () =>{
     //     signInWithPopup(auth, githubProvider)
     //     .then(result => {
@@ -50,15 +54,15 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Text className="text-success">
-
+                        {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
 
                 </Form.Text>
-                <Button className='w-100 mb-2' variant="danger" type="submit">
+                <Button className='w-100 my-2' variant="danger" type="submit">
                     Login
                 </Button>
-                <Button className='w-100 mb-2' variant="danger" >
+                <Button onClick={handleGoogleSignIn} className='w-100 mb-2' variant="danger" >
                     <FaGoogle></FaGoogle> Login With Google
                 </Button>
                 <Button className='w-100 mb-2' variant="danger" >
