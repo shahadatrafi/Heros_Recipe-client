@@ -11,6 +11,7 @@ import Main from './Components/Layouts/Main/Main.jsx';
 import Home from './Components/Home/Home.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import ChefRecipe from './Components/ChefRecipe/ChefRecipe.jsx';
+import Login from './Components/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: 
+        element: <Login></Login>
+      },
+      {
+        path
       }
     ]
   },
