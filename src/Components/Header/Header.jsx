@@ -19,10 +19,8 @@ const Header = () => {
                 <Link className='fs-5 fw-bold me-3 text-secondary text-decoration-none' to ='/blog'>Blog</Link>
             </Nav>
             <Nav>
-              <Nav.Link  href="#deets">
               {/* <Image src="holder.js/171x180" roundedCircle /> */}
-              <Button className='fs-5 fw-bold ' variant="danger">Login</Button>
-              </Nav.Link>
+              <Link to="/login"><Button className='fs-5 fw-bold ' variant="danger">Login</Button></Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
