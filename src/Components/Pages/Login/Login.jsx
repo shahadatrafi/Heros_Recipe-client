@@ -9,11 +9,13 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
     const {GoogleSignIn} = useContext(AuthContext);
+    const {GithubSignIn} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
 
-    // const githubProvider = new GithubAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () =>{
         GoogleSignIn(googleProvider)
@@ -24,18 +26,22 @@ const Login = () => {
         })
         .catch(error => {
             console.log("error", error.message)
+            setError(error.message)
         })
     }
-    // const handleGithubSignIn = () =>{
-    //     signInWithPopup(auth, githubProvider)
-    //     .then(result => {
-    //         const user = result.user
-    //         console.log(user)
-    //     })
-    //     .catch(error => {
-    //         console.log("error", error.message)
-    //     })
-    // }
+    const handleGithubSignIn = () =>{
+        GithubSignIn(githubProvider)
+        .then(result => {
+            const user = result.user
+            setSuccess("User Logged In Successfully ")
+            console.log(user)
+        })
+        .catch(error => {
+            console.log("error", error.message)
+            setError(error.message)
+
+        })
+    }
  
     return (
         <Container className='w-25 mx-auto my-5'>
@@ -65,7 +71,7 @@ const Login = () => {
                 <Button onClick={handleGoogleSignIn} className='w-100 mb-2' variant="danger" >
                     <FaGoogle></FaGoogle> Login With Google
                 </Button>
-                <Button className='w-100 mb-2' variant="danger" >
+                <Button onClick={handleGithubSignIn} className='w-100 mb-2' variant="danger" >
                     <FaGithub></FaGithub> Login With Github
                 </Button>
                 <br />
