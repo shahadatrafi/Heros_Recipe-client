@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 // import app from '../Firebase/firebase.init'; 
 // import { useState } from 'react';
@@ -15,6 +15,7 @@ const Register = () => {
     const [email, setEmail] = useState();
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
+    const navigate = useNavigate();
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -38,6 +39,7 @@ const Register = () => {
                 setError('')
                 event.target.reset()
                 setSuccess('User Create Successfully')
+                navigate('/')
                 updateProfile(loggedUser, {
                     displayName: name,
                     photoURL: photo
