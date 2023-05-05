@@ -34,7 +34,8 @@ const FeedbackSection = () => {
 
   return (
     <div>
-      <h2>Client Feedback</h2>
+      <h2 className='text-center mt-5 mb-4'>Client Feedback</h2>
+      <hr className='text-danger' />
       <div >
         {feedbacks.map((feedback, index) => (
           <ListGroup.Item className='m-3' key={index}>

@@ -26,8 +26,9 @@ import Register from '../Pages/Login/Register';
               element: <Blog></Blog>
             },
             {
-              path: '/chef-recipe',
-              element: <ChefRecipe></ChefRecipe>
+              path: '/chefData/:id',
+              element: <ChefRecipe></ChefRecipe>,
+              loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
             },
             {
               path: '/login',

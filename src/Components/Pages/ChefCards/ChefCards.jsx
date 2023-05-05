@@ -3,11 +3,10 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 const ChefCards = () => {
     const chefs = useLoaderData()
-    console.log(); 
     return (
         <Container>
             <h4 className='text-center mt-5 mb-4'>Here is Our <span className='text-danger fw-bold'>Experienced</span> Chefs</h4>
-            <hr className='text-danger' />
+            <hr className='text-danger mb-4'  />
             {
                 <Container>
                 <Row sm={1} md={3} className='g-3'>
@@ -26,7 +25,7 @@ const ChefCards = () => {
                                     <Card.Text>
                                     <span className='fw-semibold'>Likes:</span> {chef.likes}
                                     </Card.Text>
-                                    <Link><Button variant="danger">View Recipes</Button></Link>
+                                    <Link to={`/chefData/${chef.id}`}><Button variant="danger">View Recipes</Button></Link>
                                 </Card.Body>
                             </Card>
                         </Col>
