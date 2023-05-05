@@ -9,12 +9,14 @@ import Blog from '../Pages/Blog/Blog';
 import ChefRecipe from '../Pages/ChefRecipe/ChefRecipe';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Login/Register';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 
     
       const router = createBrowserRouter([
         {
           path: "/",
           element: <Main></Main>,
+          errorElement: <ErrorPage></ErrorPage>,
           children:[
             {
               path: '/',
