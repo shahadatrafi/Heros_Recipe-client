@@ -8,7 +8,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Login = () => {
-    const
+    const {SignInUser} = useContext(AuthContext)
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const { GoogleSignIn } = useContext(AuthContext);
@@ -44,10 +44,29 @@ const Login = () => {
             })
     }
 
+    const handleLogin=(event)=>{
+        event.preventDefault();
+        setSuccess('')
+        setError('')
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        SignInUser(email, password)
+        .then(result => {
+            setSuccess('User Logged In Successfully')
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
+    }
+
     return (
         <Container className='w-25 mx-auto my-5'>
             <h4>Please Login</h4>
-            <Form>
+            <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name="email" placeholder="Enter email" required />
@@ -64,7 +83,7 @@ const Login = () => {
                     {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                        {error}
                 </Form.Text>
                 <Button className='w-100 my-2' variant="danger" type="submit">
                     Login
