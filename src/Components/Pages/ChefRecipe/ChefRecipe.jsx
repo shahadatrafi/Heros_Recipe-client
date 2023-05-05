@@ -6,13 +6,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const ChefRecipe = () => {
-    const [disabled, setDisabled] = useState(false);
-    const handleFavorite = () =>{
-        setDisabled(true);
-        toast.success('Recipe Added In Favorite', {
-            position: toast.POSITION.TOP_CENTER
-        });
-    }
+    const [disabled1, setDisabled1] = useState(false);
+    const [disabled2, setDisabled2] = useState(false);
+    const [disabled3, setDisabled3] = useState(false);
+    // const handleFavorite = () =>{
+    //     setDisabled(true);
+    //     toast.success('Recipe Added In Favorite', {
+    //         position: toast.POSITION.TOP_CENTER
+    //     });
+    // }
 
     const chefDetails = useLoaderData();
     const {chef_name, chef_picture, id, likes, num_recipes,recipes, short_bio, years_of_experience
@@ -56,7 +58,12 @@ const ChefRecipe = () => {
               <p>{recipes[0].cooking_method}</p>
               <div className='mt-auto'>
               <Card.Title>Rating: {recipes[0].rating} stars</Card.Title>
-              <Button onClick={handleFavorite}  disabled={disabled} variant="danger">Add to Favorites</Button>
+              <Button onClick={() =>{
+        setDisabled1(true);
+        toast.success('Recipe Added In Favorite', {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }}  disabled={disabled1} variant="danger">Add to Favorites</Button>
               <ToastContainer />
               </div>
             </Card.Body>
@@ -78,7 +85,12 @@ const ChefRecipe = () => {
               <p>{recipes[1].cooking_method}</p>
               <div className='mt-auto'>
               <Card.Title>Rating: {recipes[1].rating} stars</Card.Title>
-              <Button onClick={handleFavorite}  disabled={disabled} variant="danger">Add to Favorites</Button>
+              <Button onClick={() =>{
+        setDisabled2(true);
+        toast.success('Recipe Added In Favorite', {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }}  disabled={disabled2} variant="danger">Add to Favorites</Button>
               <ToastContainer />
               </div>
             </Card.Body>
@@ -100,7 +112,12 @@ const ChefRecipe = () => {
               <p>{recipes[2].cooking_method}</p>
               <div className='mt-auto'>
               <Card.Title>Rating: {recipes[2].rating} stars</Card.Title>
-              <Button onClick={handleFavorite}  disabled={disabled} variant="danger">Add to Favorites</Button>
+              <Button onClick={() =>{
+        setDisabled3(true);
+        toast.success('Recipe Added In Favorite', {
+            position: toast.POSITION.TOP_CENTER
+        });
+    }}  disabled={disabled3} variant="danger">Add to Favorites</Button>
               <ToastContainer />
               </div>
             </Card.Body>

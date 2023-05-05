@@ -22,7 +22,7 @@ import PrivateRoute from './PrivateRoute';
             {
               path: '/',
               element: <Home></Home>,
-              loader: () => fetch(`http://localhost:5000/chefData`)
+              loader: () => fetch(`https://chef-hunter-server-shahadatrafi.vercel.app/chefData`)
             },
             {
               path: '/blog',
@@ -31,7 +31,7 @@ import PrivateRoute from './PrivateRoute';
             {
               path: '/chefData/:id',
               element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-              loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
+              loader: ({params}) => fetch(`https://chef-hunter-server-shahadatrafi.vercel.app/chefData/${params.id}`)
             },
             {
               path: '/login',
