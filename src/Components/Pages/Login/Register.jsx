@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -38,11 +38,22 @@ const Register = () => {
                 setError('')
                 event.target.reset()
                 setSuccess('User Create Successfully')
+                updateProfile(loggedUser, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                .then(()=>{
+                    console.log('profile updated')
+                }).catch((error)=> {
+                    console.error(error.message);
+                })
             })
             .catch(error => {
                 console.error(error.message)
                 setError(error.message)
             })
+            
+
     }
 
     return (
@@ -72,10 +83,10 @@ const Register = () => {
                     <Form.Check type="checkbox" label="Accept Terms & Conditions" />
                 </Form.Group>
                 <Form.Text className="text-success">
-
+                        {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                        {error}
                 </Form.Text>
                 <Button className='w-100 my-2' variant="danger" type="submit">
                     Register
