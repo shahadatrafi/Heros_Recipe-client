@@ -1,7 +1,8 @@
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 // import app from '../Firebase/firebase.init'; 
 // import { useState } from 'react';
 
@@ -10,43 +11,44 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-//    const [email, setEmail] = useState();
-//    const [error, setError] = useState();
-//    const [success, setSuccess] = useState();
+    const {RegisterUser, user} = useContext(AuthContext)
+   const [email, setEmail] = useState();
+   const [error, setError] = useState();
+   const [success, setSuccess] = useState();
 
-//    const handleRegister = (event) => {
-//     event.preventDefault();
-//     setSuccess('')
-//     setError('')
-//         const form = event.target;
-//         const name = form.name.value;
-//         const email = form.email.value;
-//         const password = form.password.value;
-//         const photo = form.img.value;
+   const handleRegister = (event) => {
+    event.preventDefault();
+    setSuccess('')
+    setError('')
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.img.value;
 
-//         if(password.length < 6){
-//             setError('Please Set your password with 6 character')
-//             return;
-//         }
+        if(password.length < 6){
+            setError('Please Set your password with 6 character')
+            return;
+        }
 
-//         createUserWithEmailAndPassword(auth, email, password)
-//         .then(result => {
-//             const loggedUser =result.user
-//             console.log(loggedUser)
-//             setError('')
-//             event.target.reset()
-//             setSuccess('User Create Successfully')
-//         })
-//         .catch(error => {
-//             console.error(error.message)
-//             setError(error.message)
-//         })
-//    }
+        RegisterUser(email, password)
+        .then(result => {
+            const loggedUser =result.user
+            console.log(loggedUser)
+            setError('')
+            event.target.reset()
+            setSuccess('User Create Successfully')
+        })
+        .catch(error => {
+            console.error(error.message)
+            setError(error.message)
+        })
+   }
 
     return (
         <Container className='w-25 mx-auto my-5'>
             <h4>Please Register</h4>
-            <Form>
+            <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" name="name" placeholder="Enter your name" required />

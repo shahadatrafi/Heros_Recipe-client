@@ -8,41 +8,42 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Login = () => {
+    const
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
-    const {GoogleSignIn} = useContext(AuthContext);
-    const {GithubSignIn} = useContext(AuthContext);
+    const { GoogleSignIn } = useContext(AuthContext);
+    const { GithubSignIn } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
 
     const githubProvider = new GithubAuthProvider();
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         GoogleSignIn(googleProvider)
-        .then(result => {
-            const user = result.user
-            setSuccess("User Logged In Successfully ")
-            console.log(user)
-        })
-        .catch(error => {
-            console.log("error", error.message)
-            setError(error.message)
-        })
+            .then(result => {
+                const user = result.user
+                setSuccess("User Logged In Successfully ")
+                console.log(user)
+            })
+            .catch(error => {
+                console.log("error", error.message)
+                setError(error.message)
+            })
     }
-    const handleGithubSignIn = () =>{
+    const handleGithubSignIn = () => {
         GithubSignIn(githubProvider)
-        .then(result => {
-            const user = result.user
-            setSuccess("User Logged In Successfully ")
-            console.log(user)
-        })
-        .catch(error => {
-            console.log("error", error.message)
-            setError(error.message)
+            .then(result => {
+                const user = result.user
+                setSuccess("User Logged In Successfully ")
+                console.log(user)
+            })
+            .catch(error => {
+                console.log("error", error.message)
+                setError(error.message)
 
-        })
+            })
     }
- 
+
     return (
         <Container className='w-25 mx-auto my-5'>
             <h4>Please Login</h4>
@@ -60,7 +61,7 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Text className="text-success">
-                        {success}
+                    {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
 
