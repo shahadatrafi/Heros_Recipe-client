@@ -23,7 +23,7 @@ const ChefCards = () => {
                     style={{ height: "70%", width: "80" }}
                     src={chef.chef_picture}
                   />
-                  <Card.Body className="d-flex mt-4 flex-column">
+                  <Card.Body className="d-flex mt-4 justify-content-center align-items-center flex-column">
                     <Card.Title className="fs-3">
                       {" "}
                       Name:{" "}
@@ -32,21 +32,20 @@ const ChefCards = () => {
 
                     <div className="d-flex justify-content-between my-2">
                       <Card.Text>
-                        <span className="fw-semibold">
-                          <IoMedal className="text-danger fs-4" /> Exp:
+                        <span className="fw-semibold ">
+                          <IoMedal className="text-danger fs-4 " /> Exp:
                         </span>{" "}
                         {chef.years_of_experience} Years
                       </Card.Text>
-                      <Card.Text>
+                      <Card.Text className="mx-2">
                         <span className="fw-semibold">
                           <IoFastFoodSharp className="text-danger fs-4" />{" "}
                           Recipes:
-                        </span>{" "}
-                        {chef.num_recipes}
+                        </span> {chef.num_recipes}
                       </Card.Text>
                       <Card.Text>
                         <span className="fw-semibold">
-                          <IoHeartHalf className="text-danger fs-4" /> Likes:
+                          <IoHeartHalf className="text-danger fs-4 " /> Likes:
                         </span>{" "}
                         {chef.likes}+
                       </Card.Text>
