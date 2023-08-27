@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Container>
+      <Container className='py-2'>
         <Link to='/' className='text-decoration-none'><Navbar.Brand className='fs-4 fw-bold '>Heros <span className='text-danger'>Recipe</span></Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
