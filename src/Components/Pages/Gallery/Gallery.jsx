@@ -18,7 +18,7 @@ const Gallery = () => {
       <hr className="text-danger mx-auto w-25" />
       <p className='mb-5 w-100 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, maxime! In cum placeat corporis sed.</p>
 
-      <Row className='mb-4'>
+      <Row className='mb-3 g-3'>
         {/* First Row */}
         <Col md={6}>
           <div className="image-container rounded">
@@ -33,7 +33,7 @@ const Gallery = () => {
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row className='g-3'>
         {/* Second Row */}
         <Col md={3}>
           <div className="image-container rounded">

@@ -36,17 +36,14 @@ const Testimonials = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, 
-    autoplay: true,
+    autoplay: true, 
     autoplaySpeed: 5000,
   };
 
   return (
     <Container className='testimonial-container position-relative py-5 rounded mt-110'>
       <h2 className='text-center position-absolute top-0 mt-110 start-50 fs-1'>What <span className='text-danger fw-bold'> They Say</span>
-      <hr className="text-danger mx-auto w-100" />
-
       </h2>
-      
       <Slider {...settings}>
         {testimonials.map((testimonial) => (
           <Row key={testimonial.id} className='d-flex mx-5 justify-content-between align-items-center'>
