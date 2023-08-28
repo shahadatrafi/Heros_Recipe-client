@@ -8,7 +8,7 @@ const ChefCards = () => {
   return (
     <Container className="mt-110">
       <h4 className="fs-1 text-center ">
-        Here is Our <span className="text-danger fw-bold">Experienced</span>{" "}
+         Our <span className="text-danger fw-bold">Experienced</span>{" "}
         Chefs
       </h4>
       <hr className="text-danger mb-5 mx-auto w-25" />
