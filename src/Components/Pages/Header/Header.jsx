@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container className='py-2'>
-        <Link to='/' className='text-decoration-none'><Navbar.Brand className='fs-4 fw-bold '>Heros <span className='text-danger'>Recipe</span></Navbar.Brand></Link>
+        <Link to='/' className='text-decoration-none'><Navbar.Brand className='fs-3 fw-bold '>Heros <span className='text-danger'>Recipe</span></Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <NavLink
@@ -53,7 +53,7 @@ const Header = () => {
           <NavLink
             exact
             to="/blog"
-            className="fs-5 fw-bold me-3  text-decoration-none"
+            className="fs-5 fw-bold me-3 text-decoration-none"
             activeClassName="active"
           >
             Blog

@@ -52,7 +52,7 @@ const Slider = () => {
               height: '100%',
             }}
           >
-            <div className="position-absolute top-0 start-0 bg-black opacity-25 w-100 h-100"></div>
+            <div className="position-absolute top-0 start-0 bg-black opacity-50 w-100 h-100"></div>
             <div className="position-absolute top-50 start-50 translate-middle text-white text-center px-4 w-75">
               <h2 className="fs-1 font-semibold mb-2">{slide.title}</h2>
               <p className='my-5 w-50 mx-auto'>{slide.description}</p>

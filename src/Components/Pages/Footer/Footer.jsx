@@ -9,8 +9,8 @@ const Footer = () => {
             <Container>
                 <div className="row">
                     <div className="col-md-3">
-                    <Link  className='my-2'to='/' className='text-decoration-none text-white fs-4 fw-bold'>Heros <span className='text-danger'>Recipe</span></Link>
-                        <p className='mt-4'>
+                    <Link to='/' className='text-decoration-none text-white fs-3 fw-bold'>Heros <span className='text-danger'>Recipe</span></Link>
+                        <p className='mt-3'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero aspernatur quidem <br></br>minima fugiat esse nam ex iure! Odio,<br></br> corrupti aliquam.
                         </p>
                     </div>

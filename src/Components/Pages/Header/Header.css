@@ -1,3 +1,12 @@
 .active {
-    color:red;
+    color:#dc3545;
   }
+
+  a{
+    color: rgba(0, 0, 0, 0.705);
+  }
+  a:hover{
+    color: #dc3546ec;
+    transition: color 0.3s;
+  }
+  
