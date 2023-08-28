@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import ChefCards from '../ChefCards/ChefCards';
-import FeedbackSection from '../ClientFeedback/ClientFeedback ';
-import Slider from './slider';
 import Gallery from '../Gallery/Gallery';
+import Testimonials from '../Testimonials/Testimonials';
+import Slider from './slider';
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
             <Container>
             <ChefCards></ChefCards>
             <Gallery></Gallery>
-            <FeedbackSection></FeedbackSection>
+            <Testimonials></Testimonials>
             </Container>
         </div>
     );
