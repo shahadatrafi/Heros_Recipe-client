@@ -1,27 +1,56 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { FaFacebookSquare , FaInstagramSquare, FaYoutubeSquare} from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 
 const Footer = () => {
     return (
-        <Container>
-            <div className='d-flex justify-content-between mt-5'>
-            <div>
-            <h4>Find Us On</h4>
-            <FaFacebookSquare className='fs-4 me-3 mt-4 text-danger rounded'></FaFacebookSquare>
-            <FaInstagramSquare className='fs-4 me-3 mt-4 text-danger rounded'></FaInstagramSquare>
-            <FaYoutubeSquare className='fs-4 me-3 mt-4 text-danger rounded'></FaYoutubeSquare>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <h6>Phone: +79125368410</h6>
-                <h6>Email: contact@herosrecipe.com</h6>
-                <h6>Location: 2no gate, Chittagong</h6>
-            </div>
-            </div>
-            <hr />
-            <p className='text-center'>Copyright 2023 by Heros Recipe All Right Reserved.</p>
-        </Container>
+        <footer className="bg-dark text-light py-5 mt-110">
+            <Container>
+                <div className="row">
+                    <div className="col-md-3">
+                    <Link  className='my-2'to='/' className='text-decoration-none text-white fs-4 fw-bold'>Heros <span className='text-danger'>Recipe</span></Link>
+                        <p className='mt-4'>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero aspernatur quidem <br></br>minima fugiat esse nam ex iure! Odio,<br></br> corrupti aliquam.
+                        </p>
+                    </div>
+                    <div className="col-md-3">
+                        <h4 className='mb-4'>Customer Service</h4>
+                        <ul className="list-unstyled">
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">Your Favorites</a></li>
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">FAQs</a></li>
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">My Account</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-md-3">
+                        <h4 className='mb-4'>Help</h4>
+                        <ul className="list-unstyled">
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">Customer Support</a></li>
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">Privacy and Policy</a></li>
+                            <li className='my-2'><a className='text-decoration-none text-white' href="#">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-md-3">
+                        <h4 className='mb-4'>Contact Information</h4>
+                        <p>
+                            Phone: +79125368410
+                            <br />
+                            Email: contact@herosrecipe.com
+                            <br />
+                            Location: 2no gate, Chittagong
+                        </p>
+                        <div className="d-flex">
+                            <IoLogoFacebook className="fs-4 me-3  rounded" />
+                            <IoLogoInstagram className="fs-4 me-3  rounded" />
+                            <IoLogoLinkedin className="fs-4 me-3  rounded" />
+                            <IoLogoTwitter className="fs-4 me-3  rounded" />
+                        </div>
+                    </div>
+                </div>
+            </Container>
+            <hr className="bg-light" />
+            <p className="text-center mb-0">Copyright 2023 by Heros Recipe All Right Reserved.</p>
+        </footer>
     );
 };
 

@@ -17,7 +17,7 @@ const ChefCards = () => {
           <Row sm={1} md={3} className="g-3">
             {chefs.map((chef) => (
               <Col key={chef.id}>
-                <Card className="border border-2 border-danger h-100">
+                <Card className=" border shadow h-100">
                   <Card.Img
                     variant="top"
                     style={{ height: "70%", width: "80" }}
